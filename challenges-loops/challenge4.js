@@ -7,4 +7,4 @@ do {
   }
 } while (N <= 0);
 let reversed = String(N).split("").reverse().join("");
-console.log(`Le nombre inversee est : ${reversed}`);
+console.log(`Le nombre inversée est : ${reversed}`);
