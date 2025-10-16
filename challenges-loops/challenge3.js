@@ -15,7 +15,7 @@ while (true) {
       max = N;
     }
   } else if (N > 100) {
-    console.log("Le nombre est ignoree parce que il est superieur a 100:");
+    console.log("Le nombre est ignoree parce que il est superieur a 100!!!");
   } else {
     console.log("Entrez un nombre positive et (<100) ou 0 pour stopper");
   }
