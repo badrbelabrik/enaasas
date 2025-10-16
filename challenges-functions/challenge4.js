@@ -1,4 +1,5 @@
 const prompt = require("prompt-sync")();
+const remplirtable = require("./remplirtable");
 
 //let nombres = [];
 let inverse = [];
