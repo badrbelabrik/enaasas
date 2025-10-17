@@ -1,8 +1,7 @@
 const prompt = require("prompt-sync")();
-const remplirtable = require("./remplirtable");
+const remplirtable = require("./tablefunction");
 
-//let nombres = [];
-let inverse = [];
+let nombres = [];
 
 let element = Number(prompt("Combien delement tu veux dans le tableau :"));
 
@@ -12,6 +11,7 @@ for (let i = 0; i < element; i++) {
 }
 
 function inverserTableau(tab) {
+  let inverse = [];
   for (let i = tab.length - 1; i >= 0; i--) {
     inverse.push(tab[i]);
   }

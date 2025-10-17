@@ -5,9 +5,11 @@ function remplirtable() {
   let Nelement = prompt("Combien delement tu veux dans le tableau :");
 
   for (let i = 0; i < Nelement; i++) {
-    let N = prompt(`Entrez le nombre ${i + 1}:`);
+    let N = Number(prompt(`Entrez le nombre ${i + 1}:`));
     tab.push(N);
   }
   return tab;
 }
-let table1 = remplirtable();
+
+
+module.exports = remplirtable;
