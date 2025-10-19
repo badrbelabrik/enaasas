@@ -9,19 +9,19 @@ function askforinput() {
 function addition() {
   const [a, b] = askforinput();
   let resultadd = a + b;
-  return resultadd;
+  return {a,b,resultadd};
 }
 
 function soustraction() {
   const [a, b] = askforinput();
   let resultsous = a - b;
-  return resultsous;
+  return {a,b,resultsous};
 }
 
 function multiplication() {
   const [a, b] = askforinput();
   let resultmulti = a * b;
-  return resultmulti.toFixed(2);
+  return {resultmulti,a,b};
 }
 
 function division() {
@@ -33,57 +33,57 @@ function division() {
     }
   } while (b === 0);
   let resultdiv = a / b;
-  return resultdiv.toFixed(2);
+  return {resultdiv,a,b};
 }
 
 function puissance() {
-  let N;
-  let exposant;
+  let a;
+  let b;
   do {
-    N = Number(prompt("Entrez un nombre :"));
-    exposant = Number(prompt("Entrez l'exposant :"));
-    if (N <= 0 || exposant < 0) {
-      console.log("La base doit être > 0 et l'exposant ≥ 0");
+    a = Number(prompt("Entrez un nombre :"));
+    b = Number(prompt("Entrez l'exposant :"));
+    if (a <= 0 || b < 0) {
+      console.log("La base doit être > 0 et l'b ≥ 0");
     }
-  } while (N <= 0 || exposant < 0);
+  } while (a <= 0 || b < 0);
 
   let puissanceresult = 1;
   let count = 0;
 
-  while (count < exposant) {
-    puissanceresult *= N;
+  while (count < b) {
+    puissanceresult *= a;
     count++;
   }
-  return puissanceresult.toFixed(2);
+  return {puissanceresult,a,b};
 }
 
 function racinecarree() {
-  let N;
+  let a;
   do {
-    N = Number(prompt("Entrez un nombre :"));
-    if (N < 0) {
+    a = Number(prompt("Entrez un nombre :"));
+    if (a < 0) {
       console.log("Erreur : le nombre doit être ≥ 0 pour une racine carrée.!");
     }
-  } while (N < 0);
-  const racinresult = Math.sqrt(N);
-  return racinresult.toFixed(2);
+  } while (a < 0);
+  const racinresult = Math.sqrt(a);
+  return {racinresult,a};
 }
 
 function factorielle() {
-  let N;
+  let a;
   do {
-    N = Number(prompt("Entrez un nombre :"));
-    if (N < 0) {
+    a = Number(prompt("Entrez un nombre :"));
+    if (a < 0) {
       console.log(
         "Erreur : le nombre doit être >0 pour calculer le factorielle.!"
       );
     }
-  } while (N < 0);
-  let fact = 1;
-  for (let i = 1; i <= N; i++) {
-    fact *= i;
+  } while (a < 0);
+  let factresult = 1;
+  for (let i = 1; i <= a; i++) {
+    factresult *= i;
   }
-  return fact.toFixed(2);
+  return {factresult,a};
 }
 
 let operation;
@@ -105,34 +105,35 @@ while (continuer) {
   console.log("\n");
 
   let result;
+  let a, b;
   switch (operation) {
     case 1:
-      result = addition();
-      console.log(`le resultats est :${result}`);
+      ({ a, b, resultadd : result} = addition());
+      console.log(`le resultats est :${a} + ${b} = ${result}`);
       break;
     case 2:
-      result = soustraction();
-      console.log(`le resultats est :${result}`);
+      ({a, b, resultsous : result} = soustraction());
+      console.log(`le resultats est :${a} - ${b} = ${result}`);
       break;
     case 3:
-      result = multiplication();
-      console.log(`le resultats est :${result}`);
+      ({a, b, resultmulti : result} = multiplication());
+      console.log(`le resultats est :${a} * ${b} = ${result}`);
       break;
     case 4:
-      result = division();
-      console.log(`le resultats est :${result}`);
+      ({a, b, resultdiv : result} = division());
+      console.log(`le resultats est :${a} * ${b} = ${result}`);
       break;
     case 5:
-      result = puissance();
-      console.log(`le resultats est :${result}`);
+      ({a, b, puissanceresult : result} = puissance());
+      console.log(`le resultats est :${a} ^ ${b} = ${result}`);
       break;
     case 6:
-      result = racinecarree();
-      console.log(`le resultats est :${result}`);
+      ({a, racinresult : result} = racinecarree());
+      console.log(`le resultats est :√${a} = ${result}`);
       break;
     case 7:
-      result = factorielle();
-      console.log(`le resultats est :${result}`);
+      ({a, factresult : result} = factorielle());
+      console.log(`le resultats est :!${a}  = ${result}`);
       break;
     case 8:
       if (historique.length === 0) {
@@ -140,7 +141,7 @@ while (continuer) {
       } else {
         console.log("=== Historique des résultats ===");
         historique.forEach((res, index) => {
-          console.log(`${index + 1}. ${res}`);
+          console.log(`${index + 1}). ${res.toFixed(2)}`);
         });
       }
       break;
