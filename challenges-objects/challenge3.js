@@ -2,9 +2,9 @@ const prompt = require("prompt-sync")();
 //1
 /*
 const entreprise = {
-  rue: "oulad hamdane",
+  rue: "rue45",
   ville: "beni mellal",
-  codepostale: 23040,
+  codepostale: 42355,
 };
 console.log(entreprise.ville);
 
@@ -42,7 +42,16 @@ const employees = [
 let emp;
 function trouveremployees() {
   let element = 3500;
-  const emp = employees.find((item) => item.salaire <= element);
+  const emp = employees.filter((item) => item.salaire <= element);
   return emp;
 }
-console.log(trouveremployees());
+console.log(trouveremployees()); 
+
+//5
+function cloner(obj){
+  return { ...obj };
+}
+
+const copy = cloner(employees);
+console.log("Original object:", employees);
+console.log("Cloned object:", copy);

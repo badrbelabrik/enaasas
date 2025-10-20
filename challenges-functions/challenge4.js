@@ -10,6 +10,9 @@ for (let i = 0; i < element; i++) {
   nombres.push(N);
 }
 
+let result2 = nombres.reverse();
+console.log(result2);
+
 function inverserTableau(tab) {
   let inverse = [];
   for (let i = tab.length - 1; i >= 0; i--) {
@@ -19,3 +22,5 @@ function inverserTableau(tab) {
 }
 let result = inverserTableau(nombres);
 console.log(`${result}`);
+
+
