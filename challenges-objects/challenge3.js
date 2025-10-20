@@ -34,24 +34,36 @@ const animal = {
 console.log(animal.parler());*/
 
 //4
+
 const employees = [
   { nom: "employee 1", salaire: 4500 },
   { nom: "employee 2", salaire: 3000 },
   { nom: "employee 3", salaire: 2500 },
 ];
+/*
 let emp;
 function trouveremployees() {
   let element = 3500;
   const emp = employees.filter((item) => item.salaire <= element);
   return emp;
 }
-console.log(trouveremployees()); 
+console.log(trouveremployees()); */
 
 //5
-function cloner(obj){
-  return { ...obj };
+const entreprise = {
+  rue: "rue45",
+  ville: "beni mellal",
+  codepostale: 42355,
+};
+/*let newclone = {};
+function cloner(obj,clone){
+  for(i=0; i<obj.length; i++){
+    clone[i] = obj[i] ;
+  }
+  return clone;
 }
+*/
+const another = {...employees};
 
-const copy = cloner(employees);
-console.log("Original object:", employees);
-console.log("Cloned object:", copy);
+console.log(another);
+
