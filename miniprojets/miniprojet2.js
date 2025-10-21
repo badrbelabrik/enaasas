@@ -74,7 +74,7 @@ function marquetache() {
       console.log("Tache marquée en attente.");
     }
   } else {
-    console.log("tâche non trouvée!!");
+    console.log("tache non trouvée!!");
   }
 }
 
@@ -98,7 +98,7 @@ do {
   console.log("6. Marquer une tâche comme terminée/en attente");
   console.log("7. Afficher tâches terminées / en attente");
   console.log("0. Quitter");
-  let choix = Number(prompt("Choisissez une option :"));
+  let choix = Number(prompt("Choisi une option :"));
   console.log("\n");
 
   switch (choix) {
