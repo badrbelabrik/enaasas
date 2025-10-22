@@ -157,7 +157,14 @@ function ajoutretour() {
   }
 }
 
-function afficheemprunts() {}
+function afficheemprunts() {
+  let livreemprunt = empruntslist.map(emprunt =>livreslist.find(livre => livre.id == emprunt.id_livre));
+  if (livreemprunt) {
+    console.log(livreemprunt);
+  }
+
+
+}
 
 function submenu1() {
   let operation;
