@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 
-function affichetasks() {
+function affichetache() {
   if (taskslist.length <= 0) {
     console.log("Pas encore de taches");
   } else {
@@ -68,7 +68,7 @@ function marquetache() {
     );
     if (choice == 1) {
       rechtask.statut = "Terminée";
-      console.log("Tach marquée terminée.");
+      console.log("Tache marquée terminée.");
     } else if (choice == 2) {
       rechtask.statut = "En attente";
       console.log("Tache marquée en attente.");
@@ -78,7 +78,7 @@ function marquetache() {
   }
 }
 
-function affichetache() {
+function affichetachestatut() {
   const tasktrat = taskslist.filter(
     (item) => item.statut == ("Terminée" || "En attente")
   );
@@ -103,7 +103,7 @@ do {
 
   switch (choix) {
     case 1:
-      affichetasks();
+      affichetache();
       break;
     case 2:
       creertache();
@@ -121,7 +121,7 @@ do {
       marquetache();
       break;
     case 7:
-      affichetache();
+      affichetachestatut();
       break;
     case 0:
       console.log("Le programme va fermer!");
