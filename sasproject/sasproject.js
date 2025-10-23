@@ -133,7 +133,7 @@ function affichelivresdispo() {
 
 function rechlivreparid() {
   let rechlivreid = Number(prompt("Entrez l'ID' du livre :"));
-  const rechlivre = livreslist.filter((item) => item.id == rechlivreid);
+  const rechlivre = livreslist.find((item) => item.id == rechlivreid);
   console.log(rechlivre);
 }
 
@@ -176,6 +176,7 @@ function ajoutemprunt() {
   let livretrouve = livreslist.find((item) => item.id == livre);
   if (!livretrouve) {
     console.log("livre introuvable!");
+    return;
   } else if (livretrouve.statut == "non disponible") {
     console.log("Ce livre est déjà emprunté !");
   } else {
